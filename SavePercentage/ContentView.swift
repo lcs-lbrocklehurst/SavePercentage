@@ -8,6 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    //MARK: Stored Properties
+    @State var shots: Double = 30
+    @State var goals: Double = 2
+    
+    
+    //MARK: Computed Properties
+    var saves: Double {
+        return shots - goals
+    }
+    
+    var savePercentage: Double {
+        return saves/shots
+    }
+    
+    
+    
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
