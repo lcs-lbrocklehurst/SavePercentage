@@ -11,8 +11,9 @@ struct ContentView: View {
     
     //MARK: Stored Properties
     @State var shots: Double = 30
-    @State var goals: Double = 2
-    
+    @State var goals: Double = 1
+    @State private var shotValue = 1
+    @State private var saveValue = 1
     
     //MARK: Computed Properties
     var saves: Double {
@@ -38,11 +39,12 @@ struct ContentView: View {
             }
                        .padding(.horizontal)
 
-                       HStack(spacing: 0) {
-                           Text("#")
-
-                           TextField("0.00", text: .constant(""))
-                       }
+            Stepper("\(shotValue)",
+                    value: $shotValue,
+                    in: 1...400)
+            
+            .padding()
+            
             HStack {
                 Text("Shots")
                     .font(.headline.smallCaps())
@@ -53,10 +55,13 @@ struct ContentView: View {
             .padding(.horizontal)
             
             HStack(spacing: 0) {
-                Text("#")
                 
-                          TextField("0.00", text:     .constant(""))
+                Stepper("\(saveValue)",
+                        value: $saveValue,
+                        in: 1...400)
                 
+                         
+                                
             }
             
                        .padding()
@@ -65,7 +70,7 @@ struct ContentView: View {
             }
         
         
-        .padding()
+        .padding(.top, 10)
         .navigationTitle("Save Pct Calculator")
     }
     
