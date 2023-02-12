@@ -43,10 +43,28 @@ struct ContentView: View {
 
                            TextField("0.00", text: .constant(""))
                        }
+            HStack {
+                Text("Shots")
+                    .font(.headline.smallCaps())
+                
+                Spacer()
+                
+            }
+            .padding(.horizontal)
+            
+            HStack(spacing: 0) {
+                Text("#")
+                
+                          TextField("0.00", text:     .constant(""))
+                
+            }
+            
                        .padding()
 
                        Spacer()
             }
+        
+        
         .padding()
         .navigationTitle("Save Pct Calculator")
     }
