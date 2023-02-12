@@ -34,11 +34,14 @@ struct ContentView: View {
             Text("Hello, world!")
         }
         .padding()
+        .navigationTitle("Save Pct Calculator")
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        NavigationView {
+            ContentView()
+        }
     }
 }
