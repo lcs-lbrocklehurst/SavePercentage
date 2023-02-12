@@ -31,43 +31,61 @@ struct ContentView: View {
         
         VStack(spacing: 0) {
             
-            HStack {
-                Text("Saves")
-                    .font(.headline.smallCaps())
+            Group {
                 
-                Spacer()
-            }
-                       .padding(.horizontal)
-
-            Stepper("\(shotValue)",
-                    value: $shotValue,
-                    in: 1...400)
-            
-            .padding()
-            
-            HStack {
-                Text("Shots")
-                    .font(.headline.smallCaps())
+                HStack {
+                    Text("Saves")
+                        .font(.headline.smallCaps())
+                    
+                    Spacer()
+                }
+                .padding(.horizontal)
                 
-                Spacer()
-                
-            }
-            .padding(.horizontal)
-            
-            HStack(spacing: 0) {
-                
-                Stepper("\(saveValue)",
-                        value: $saveValue,
+                Stepper("\(shotValue)",
+                        value: $shotValue,
                         in: 1...400)
                 
-                         
-                                
+                .padding()
+                
+                HStack {
+                    Text("Shots")
+                        .font(.headline.smallCaps())
+                    
+                    Spacer()
+                    
+                }
+                .padding(.horizontal)
+                
+                HStack(spacing: 0) {
+                    
+                    Stepper("\(saveValue)",
+                            value: $saveValue,
+                            in: 1...400)
+                    
+                    .padding()
+                    
+                }
+                
+                HStack {
+                    Text("Save Percentage ")
+                        .font(.headline.smallCaps())
+                }
+                .padding()
+                HStack {
+                    Text("=")
+                    
+                    TextField("0.00", text: .constant(""))
+                    
+                
+                }
+            
+                
+
+                           Spacer()
+                }
             }
             
-                       .padding()
-
-                       Spacer()
-            }
+            
         
         
         .padding(.top, 10)
