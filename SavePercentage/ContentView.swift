@@ -27,21 +27,35 @@ struct ContentView: View {
     
     
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
+        
+        VStack(spacing: 0) {
+            
+            HStack {
+                Text("Saves")
+                    .font(.headline.smallCaps())
+                
+                Spacer()
+            }
+                       .padding(.horizontal)
+
+                       HStack(spacing: 0) {
+                           Text("#")
+
+                           TextField("0.00", text: .constant(""))
+                       }
+                       .padding()
+
+                       Spacer()
+            }
         .padding()
         .navigationTitle("Save Pct Calculator")
     }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            ContentView()
+    
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            NavigationView {
+                ContentView()
+            }
         }
     }
 }
