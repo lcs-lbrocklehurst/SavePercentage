@@ -10,10 +10,9 @@ import SwiftUI
 struct ContentView: View {
     
     //MARK: Stored Properties
-    @State var shots: Double = 30
-    @State var goals: Double = 1
-    @State private var shotValue = 1
-    @State private var saveValue = 1
+    @State var shots: Double = 0
+    @State var goals: Double = 0
+    
     
     //MARK: Computed Properties
     var saves: Double {
@@ -34,21 +33,21 @@ struct ContentView: View {
             Group {
                 
                 HStack {
-                    Text("Saves")
+                    Text("Shots")
                         .font(.headline.smallCaps())
                     
                     Spacer()
                 }
                 .padding(.horizontal)
                 
-                Stepper("\(shotValue)",
-                        value: $shotValue,
+                Stepper("\(shots)",
+                        value: $shots,
                         in: 1...400)
                 
                 .padding()
                 
                 HStack {
-                    Text("Shots")
+                    Text("Goals")
                         .font(.headline.smallCaps())
                     
                     Spacer()
@@ -58,8 +57,8 @@ struct ContentView: View {
                 
                 HStack(spacing: 0) {
                     
-                    Stepper("\(saveValue)",
-                            value: $saveValue,
+                    Stepper("\(goals)",
+                            value: $goals,
                             in: 1...400)
                     
                     .padding()
@@ -74,7 +73,9 @@ struct ContentView: View {
                 HStack {
                     Text("=")
                     
-                    TextField("0.00", text: .constant(""))
+                    Text("\(savePercentage)")
+                    
+                    
                     
                 
                 }
@@ -88,7 +89,7 @@ struct ContentView: View {
             
         
         
-        .padding(.top, 10)
+        .padding()
         .navigationTitle("Save Pct Calculator")
     }
     
