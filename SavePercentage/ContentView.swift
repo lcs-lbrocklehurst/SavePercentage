@@ -40,7 +40,7 @@ struct ContentView: View {
                 }
                 .padding(.horizontal)
                 
-                Stepper("\(shots)",
+                Stepper("\(shots.formatted(.number.precision(.fractionLength(0))))",
                         value: $shots,
                         in: 1...400)
                 
@@ -57,7 +57,7 @@ struct ContentView: View {
                 
                 HStack(spacing: 0) {
                     
-                    Stepper("\(goals)",
+                    Stepper("\(goals.formatted(.number.precision(.fractionLength(0))))",
                             value: $goals,
                             in: 1...400)
                     
@@ -73,7 +73,7 @@ struct ContentView: View {
                 HStack {
                     Text("=")
                     
-                    Text("\(savePercentage)")
+                    Text("\(savePercentage.formatted(.number.precision(.fractionLength(3))))")
                     
                     
                     
