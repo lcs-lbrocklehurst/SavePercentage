@@ -11,6 +11,7 @@
 		471B5C38299892F300D3B0D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 471B5C37299892F300D3B0D6 /* Assets.xcassets */; };
 		471B5C3B299892F300D3B0D6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 471B5C3A299892F300D3B0D6 /* Preview Assets.xcassets */; };
 		47755E5B29F0460700B46421 /* SavePctView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47755E5A29F0460700B46421 /* SavePctView.swift */; };
+		47755E5F29F0496500B46421 /* SavePercentage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47755E5E29F0496500B46421 /* SavePercentage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		471B5C37299892F300D3B0D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		471B5C3A299892F300D3B0D6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		47755E5A29F0460700B46421 /* SavePctView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePctView.swift; sourceTree = "<group>"; };
+		47755E5E29F0496500B46421 /* SavePercentage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePercentage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,8 @@
 			isa = PBXGroup;
 			children = (
 				471B5C33299892F100D3B0D6 /* SavePercentageApp.swift */,
+				47755E5D29F0492900B46421 /* Model */,
+				47755E5C29F0469B00B46421 /* Views */,
 				47755E5A29F0460700B46421 /* SavePctView.swift */,
 				471B5C37299892F300D3B0D6 /* Assets.xcassets */,
 				471B5C39299892F300D3B0D6 /* Preview Content */,
@@ -65,6 +69,21 @@
 				471B5C3A299892F300D3B0D6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		47755E5C29F0469B00B46421 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		47755E5D29F0492900B46421 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				47755E5E29F0496500B46421 /* SavePercentage.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47755E5F29F0496500B46421 /* SavePercentage.swift in Sources */,
 				47755E5B29F0460700B46421 /* SavePctView.swift in Sources */,
 				471B5C34299892F100D3B0D6 /* SavePercentageApp.swift in Sources */,
 			);
