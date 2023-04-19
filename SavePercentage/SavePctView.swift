@@ -1,13 +1,13 @@
 //
-//  ContentView.swift
+//  SavePctView.swift
 //  SavePercentage
 //
-//  Created by Lewis Brocklehurst on 2023-02-11.
+//  Created by Lewis Brocklehurst on 2023-04-19.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct SavePctView: View {
     
     //MARK: Stored Properties
     @State var shots: Double = 0
@@ -96,8 +96,9 @@ struct ContentView: View {
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
             NavigationView {
-                ContentView()
+                SavePctView()
             }
         }
     }
 }
+
