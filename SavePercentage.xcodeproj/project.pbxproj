@@ -13,6 +13,7 @@
 		47755E5B29F0460700B46421 /* SavePercentageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47755E5A29F0460700B46421 /* SavePercentageView.swift */; };
 		47755E5F29F0496500B46421 /* SavePercentage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47755E5E29F0496500B46421 /* SavePercentage.swift */; };
 		47755E6229F04DA200B46421 /* Blackbird in Frameworks */ = {isa = PBXBuildFile; productRef = 47755E6129F04DA200B46421 /* Blackbird */; };
+		47755E6429F18C8D00B46421 /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 47755E6329F18C8D00B46421 /* db.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		471B5C3A299892F300D3B0D6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		47755E5A29F0460700B46421 /* SavePercentageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePercentageView.swift; sourceTree = "<group>"; };
 		47755E5E29F0496500B46421 /* SavePercentage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePercentage.swift; sourceTree = "<group>"; };
+		47755E6329F18C8D00B46421 /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = db.sqlite; path = SavePercentage/db.sqlite; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		47755E5D29F0492900B46421 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				47755E6329F18C8D00B46421 /* db.sqlite */,
 				47755E5E29F0496500B46421 /* SavePercentage.swift */,
 			);
 			path = Model;
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				471B5C3B299892F300D3B0D6 /* Preview Assets.xcassets in Resources */,
+				47755E6429F18C8D00B46421 /* db.sqlite in Resources */,
 				471B5C38299892F300D3B0D6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
