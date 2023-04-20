@@ -32,6 +32,9 @@ struct SavePercentageView: View {
             
             Group {
                 
+                    
+                 
+                
                 HStack {
                     Text("Shots")
                         .font(.headline.smallCaps())
