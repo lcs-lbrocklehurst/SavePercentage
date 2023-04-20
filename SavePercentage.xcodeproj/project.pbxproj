@@ -15,6 +15,7 @@
 		47755E6229F04DA200B46421 /* Blackbird in Frameworks */ = {isa = PBXBuildFile; productRef = 47755E6129F04DA200B46421 /* Blackbird */; };
 		47755E6429F18C8D00B46421 /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 47755E6329F18C8D00B46421 /* db.sqlite */; };
 		47755E6729F18F2900B46421 /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47755E6629F18F2900B46421 /* AppDatabase.swift */; };
+		47755E6929F191AB00B46421 /* SavedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47755E6829F191AB00B46421 /* SavedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		47755E5E29F0496500B46421 /* SavePercentage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePercentage.swift; sourceTree = "<group>"; };
 		47755E6329F18C8D00B46421 /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = db.sqlite; path = SavePercentage/db.sqlite; sourceTree = SOURCE_ROOT; };
 		47755E6629F18F2900B46421 /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
+		47755E6829F191AB00B46421 /* SavedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				47755E5D29F0492900B46421 /* Model */,
 				47755E5C29F0469B00B46421 /* Views */,
 				47755E5A29F0460700B46421 /* SavePercentageView.swift */,
+				47755E6829F191AB00B46421 /* SavedView.swift */,
 				471B5C37299892F300D3B0D6 /* Assets.xcassets */,
 				471B5C39299892F300D3B0D6 /* Preview Content */,
 			);
@@ -180,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47755E5F29F0496500B46421 /* SavePercentage.swift in Sources */,
+				47755E6929F191AB00B46421 /* SavedView.swift in Sources */,
 				47755E5B29F0460700B46421 /* SavePercentageView.swift in Sources */,
 				47755E6729F18F2900B46421 /* AppDatabase.swift in Sources */,
 				471B5C34299892F100D3B0D6 /* SavePercentageApp.swift in Sources */,
