@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SavePctView: View {
+struct SavePercentageView: View {
     
     //MARK: Stored Properties
     @State var shots: Double = 0
@@ -96,7 +96,7 @@ struct SavePctView: View {
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
             NavigationView {
-                SavePctView()
+                SavePercentageView()
             }
         }
     }

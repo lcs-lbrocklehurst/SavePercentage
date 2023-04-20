@@ -11,7 +11,7 @@ import SwiftUI
 struct SavePercentageApp: App {
     var body: some Scene {
         WindowGroup {
-            SavePctView()
+            SavePercentageView()
         }
     }
 }

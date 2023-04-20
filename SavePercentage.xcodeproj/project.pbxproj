@@ -10,8 +10,9 @@
 		471B5C34299892F100D3B0D6 /* SavePercentageApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471B5C33299892F100D3B0D6 /* SavePercentageApp.swift */; };
 		471B5C38299892F300D3B0D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 471B5C37299892F300D3B0D6 /* Assets.xcassets */; };
 		471B5C3B299892F300D3B0D6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 471B5C3A299892F300D3B0D6 /* Preview Assets.xcassets */; };
-		47755E5B29F0460700B46421 /* SavePctView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47755E5A29F0460700B46421 /* SavePctView.swift */; };
+		47755E5B29F0460700B46421 /* SavePercentageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47755E5A29F0460700B46421 /* SavePercentageView.swift */; };
 		47755E5F29F0496500B46421 /* SavePercentage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47755E5E29F0496500B46421 /* SavePercentage.swift */; };
+		47755E6229F04DA200B46421 /* Blackbird in Frameworks */ = {isa = PBXBuildFile; productRef = 47755E6129F04DA200B46421 /* Blackbird */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,7 +20,7 @@
 		471B5C33299892F100D3B0D6 /* SavePercentageApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePercentageApp.swift; sourceTree = "<group>"; };
 		471B5C37299892F300D3B0D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		471B5C3A299892F300D3B0D6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		47755E5A29F0460700B46421 /* SavePctView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePctView.swift; sourceTree = "<group>"; };
+		47755E5A29F0460700B46421 /* SavePercentageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePercentageView.swift; sourceTree = "<group>"; };
 		47755E5E29F0496500B46421 /* SavePercentage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePercentage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -28,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47755E6229F04DA200B46421 /* Blackbird in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,7 +58,7 @@
 				471B5C33299892F100D3B0D6 /* SavePercentageApp.swift */,
 				47755E5D29F0492900B46421 /* Model */,
 				47755E5C29F0469B00B46421 /* Views */,
-				47755E5A29F0460700B46421 /* SavePctView.swift */,
+				47755E5A29F0460700B46421 /* SavePercentageView.swift */,
 				471B5C37299892F300D3B0D6 /* Assets.xcassets */,
 				471B5C39299892F300D3B0D6 /* Preview Content */,
 			);
@@ -102,6 +104,9 @@
 			dependencies = (
 			);
 			name = SavePercentage;
+			packageProductDependencies = (
+				47755E6129F04DA200B46421 /* Blackbird */,
+			);
 			productName = SavePercentage;
 			productReference = 471B5C30299892F100D3B0D6 /* SavePercentage.app */;
 			productType = "com.apple.product-type.application";
@@ -130,6 +135,9 @@
 				Base,
 			);
 			mainGroup = 471B5C27299892F100D3B0D6;
+			packageReferences = (
+				47755E6029F04DA200B46421 /* XCRemoteSwiftPackageReference "Blackbird" */,
+			);
 			productRefGroup = 471B5C31299892F100D3B0D6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -157,7 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47755E5F29F0496500B46421 /* SavePercentage.swift in Sources */,
-				47755E5B29F0460700B46421 /* SavePctView.swift in Sources */,
+				47755E5B29F0460700B46421 /* SavePercentageView.swift in Sources */,
 				471B5C34299892F100D3B0D6 /* SavePercentageApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,6 +367,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		47755E6029F04DA200B46421 /* XCRemoteSwiftPackageReference "Blackbird" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marcoarment/Blackbird";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		47755E6129F04DA200B46421 /* Blackbird */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 47755E6029F04DA200B46421 /* XCRemoteSwiftPackageReference "Blackbird" */;
+			productName = Blackbird;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 471B5C28299892F100D3B0D6 /* Project object */;
 }
