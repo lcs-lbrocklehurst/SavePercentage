@@ -16,7 +16,7 @@ struct SavePercentageView: View {
     
     @State var shots: Double = 0
     @State var goals: Double = 0
-    @State var currentSavePercentage: SavePercentage?
+    
     
     //MARK: Computed Properties
     var saves: Double {
@@ -90,19 +90,16 @@ struct SavePercentageView: View {
                 
                 Task {
                     //write to database
-                   if let currentSavePercentage = currentSavePercentage {
-                       try await db!.transaction { core in try core.query("INSERT INTO SavePercentage(id, title, saves, shots, savePercentage) VALUES (?,?,?,?,?) ",
-                                                                           currentSavePercentage.id,
+                    try await db!.transaction { core in try core.query("INSERT INTO SavePercentage (title, saves, shots, savePercentage) VALUES (?,?,?,?)",
 
-                                                                          currentSavePercentage.title,
+                                                                       "empty title",
 
-                                                                          currentSavePercentage.saves,
+                                                                       saves,
 
-                                                                           currentSavePercentage.shots,
-                                                                           currentSavePercentage.savePercentage)
+                                                                        shots,
+                                                                        savePercentage)
 
-                       }
-                   }
+                    }
                 }
                 
            }, label: {

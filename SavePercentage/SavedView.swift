@@ -13,29 +13,30 @@ struct SavedView: View {
     
     //the List of saved Games
     @BlackbirdLiveModels({ db in
-        try await SavePercentage.read( from: db)
+        try await SavePercentage.read(from: db)
     }) var savedGames
     
     //MARK: computed Properties
     var body: some View {
         NavigationView() {
             
-            List(savedGames.results) { currentSavePercentage in VStack(alignment: . leading) {
-                Text(currentSavePercentage.title)
-                    .bold()
-                Text("shots:")
-                Text("\(currentSavePercentage.shots)")
-                Text("Saves:")
-                Text("\(currentSavePercentage.saves)")
-                Text("Save Percentage:")
-                Text("\(currentSavePercentage.savePercentage)")
-                
-            }
+            List(savedGames.results) { currentSavePercentage in
+                VStack(alignment: .leading) {
+                    Text(currentSavePercentage.title)
+                        .bold()
+                    Text("shots:")
+                    Text("\(currentSavePercentage.shots)")
+                    Text("Saves:")
+                    Text("\(currentSavePercentage.saves)")
+                    Text("Save Percentage:")
+                    Text("\(currentSavePercentage.savePercentage)")
+                    
+                }
                 
             }
             .navigationTitle("Saved games")
         }
-     
+        
     }
 }
 
