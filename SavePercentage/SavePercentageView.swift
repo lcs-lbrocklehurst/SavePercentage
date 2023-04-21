@@ -10,6 +10,10 @@ import SwiftUI
 struct SavePercentageView: View {
     
     //MARK: Stored Properties
+    
+    // Acess the connection to the database (needed to add a new record)
+    @Environment(\.blackbirdDatabase) var db: Blackbird.Database?
+    
     @State var shots: Double = 0
     @State var goals: Double = 0
     @State var currentSavePercentage: SavePercentage?
@@ -23,6 +27,7 @@ struct SavePercentageView: View {
         return saves/shots
     }
     
+    
     var body: some View {
         
         VStack(spacing: 0) {
@@ -30,7 +35,6 @@ struct SavePercentageView: View {
             Group {
                 
                     
-                 
                 
                 HStack {
                     Text("Shots")
@@ -77,41 +81,42 @@ struct SavePercentageView: View {
                  
                 }
             
-                
+         
 
                 Spacer()
             }
             
-//            Button(action: {
+            Button(action: {
                 
-//                Task {
-//                    //write to database
-//                    if let currentSavePercentage = currentSavePercentage {
-//                        try await db!.Transaction { core in try core.query("INSERT INTO SAVEPERCENTAGE(id, title, saves, shots, savePercentage) VALUES (?,?,?,?,?) ",
-//                                                                           currentSavePercentage.id,
-//
-//                                                                           currentSavePercentage.title,
-//
-//                                                                           currentSavePercentage.saves,
-//
-//                                                                           currentSavePercentage.shots,
-//                                                                           currentSavePercentage.savePercentage)
-//
-//                        }
-//                    }
-//                }
-//            }, Label: {
-//                Text("save for later")
-//
-//            })
-//            .buttonstyle(.borderedProminent)
+                Task {
+                    //write to database
+                   if let currentSavePercentage = currentSavePercentage {
+                       try await db!.transaction { core in try core.query("INSERT INTO SavePercentage(id, title, saves, shots, savePercentage) VALUES (?,?,?,?,?) ",
+                                                                           currentSavePercentage.id,
+
+                                                                          currentSavePercentage.title,
+
+                                                                          currentSavePercentage.saves,
+
+                                                                           currentSavePercentage.shots,
+                                                                           currentSavePercentage.savePercentage)
+
+                       }
+                   }
+                }
+                
+           }, label: {
+                Text("Save for later")
+
+            })
+           .buttonStyle(.borderedProminent)
             
         }
         .padding()
         .navigationTitle("Save Pct Calculator")
     }
     
-    
+        
 }
 
 struct ContentView_Previews: PreviewProvider {

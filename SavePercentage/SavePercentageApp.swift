@@ -11,7 +11,18 @@ import SwiftUI
 struct SavePercentageApp: App {
     var body: some Scene {
         WindowGroup {
-            SavePercentageView()
+            TabView {
+                SavePercentageView()
+                    .tabItem {
+                        Label("Fresh", systemImage: "carrot")
+                    }
+                
+                SavedView()
+                    .tabItem {
+                        Label("Favourites", systemImage: "Face Smilling")
+                    }
+            }
+            
             //Make the database available to all child views through the environment
                 .environment(\.blackbirdDatabase, AppDatabase.instance)
         }

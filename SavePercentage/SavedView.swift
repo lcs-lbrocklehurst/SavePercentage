@@ -23,7 +23,13 @@ struct SavedView: View {
             List(savedGames.results) { currentSavePercentage in VStack(alignment: . leading) {
                 Text(currentSavePercentage.title)
                     .bold()
+                Text("shots:")
+                Text("\(currentSavePercentage.shots)")
+                Text("Saves:")
+                Text("\(currentSavePercentage.saves)")
+                Text("Save Percentage:")
                 Text("\(currentSavePercentage.savePercentage)")
+                
             }
                 
             }
