@@ -19,8 +19,10 @@ struct SavedView: View {
     //MARK: computed Properties
     var body: some View {
         NavigationView() {
-            
-            List(savedGames.results) { currentSavePercentage in
+            List{
+                
+            }
+            ForEach(savedGames.results) { currentSavePercentage in
                 VStack(alignment: .leading) {
                     Text(currentSavePercentage.title)
                         .bold()

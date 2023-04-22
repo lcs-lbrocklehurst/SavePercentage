@@ -16,7 +16,12 @@ struct SavePercentageView: View {
     
     @State var shots: Double = 0
     @State var goals: Double = 0
-    @State private var newGameDescription: String = ""
+    @State private var Title: String = ""
+    @State var SavePercentageOpacity = 0.0
+    
+    
+        //track whether current joke has been saved to Database
+    @State var savedToDatabase = false
     
     //MARK: Computed Properties
     var saves: Double {
@@ -33,9 +38,11 @@ struct SavePercentageView: View {
         VStack(spacing: 0) {
             
             VStack {
-                TextField("Add a new game", text: $newGameDescription)
+                TextField("Add a new game", text: $Title)
                     .font(.title)
                     .padding(.horizontal)
+                
+              
             }
            
             
@@ -98,18 +105,22 @@ struct SavePercentageView: View {
                 }
                 
                 Button(action: {
-                    
+                //reset the interface
+                    // Reset the interface
+                                         
                     Task {
                         //write to database
                         try await db!.transaction { core in try core.query("INSERT INTO SavePercentage (title, saves, shots, savePercentage) VALUES (?,?,?,?)",
                                                                            
-                                                                           "empty title",
-                                                                           
+                                                                           Title,
+                                                                
                                                                            saves,
-                                                                           
+                                                            
                                                                            shots,
                                                                            savePercentage)
                             
+                            
+                        
                         }
                     }
                     
@@ -117,6 +128,9 @@ struct SavePercentageView: View {
                     Text("Save for later")
                     
                 })
+            //Once saved, disable the button so we can't save the joke twice
+                
+
                 .buttonStyle(.borderedProminent)
                 
             }
