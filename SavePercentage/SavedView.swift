@@ -16,31 +16,53 @@ struct SavedView: View {
         try await SavePercentage.read(from: db)
     }) var savedGames
     
+    //the search term the user has provided
+    @State var searchText = ""
     //MARK: computed Properties
     var body: some View {
         NavigationView() {
+            
             List{
-                
-            }
-            ForEach(savedGames.results) { currentSavePercentage in
-                VStack(alignment: .leading) {
-                    Text(currentSavePercentage.title)
-                        .bold()
-                    Text("shots:")
-                    Text("\(currentSavePercentage.shots)")
-                    Text("Saves:")
-                    Text("\(currentSavePercentage.saves)")
-                    Text("Save Percentage:")
-                    Text("\(currentSavePercentage.savePercentage)")
+                ForEach(savedGames.results) { currentSavePercentage in
+                    VStack(alignment: .leading) {
+                        Text(currentSavePercentage.title)
+                            .bold()
+                        Text("shots:")
+                        Text("\(currentSavePercentage.shots)")
+                        Text("Saves:")
+                        Text("\(currentSavePercentage.saves)")
+                        Text("Save Percentage:")
+                        Text("\(currentSavePercentage.savePercentage)")
+                        
+                        Text("Searching on: \(searchText)")
+                        
+                            .searchable(text: $searchText)
+                    }
+                    
                     
                 }
+                .onDelete(perform: removeRows)
                 
             }
+           
             .navigationTitle("Saved games")
         }
         
     }
+    
+    
 }
+//MARK: Functions
+func removeRows(at offsets: IndexSet) {
+    
+    //what item(s) were swiped?
+    for offsets in offsets {
+        print(offsets)
+    }
+            
+}
+
+
 
 struct SavedView_Previews: PreviewProvider {
     static var previews: some View {
