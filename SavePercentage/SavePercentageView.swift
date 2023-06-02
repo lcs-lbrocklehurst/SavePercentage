@@ -107,25 +107,12 @@ struct SavePercentageView: View {
                     Spacer()
                 }
                 
-                Button(action: {
+            Button(action: {
+                        AddSavePercentage()
                 //reset the interface
                     // Reset the interface
                                          
-                    Task {
-                        //write to database
-                        try await db!.transaction { core in try core.query("INSERT INTO SavePercentage (title, saves, shots, savePercentage) VALUES (?,?,?,?)",
-                                                                           
-                                                                           Title,
-                                                                
-                                                                           saves,
-                                                            
-                                                                           shots,
-                                                                           savePercentage)
-                            
-                            
-                        
-                        }
-                    }
+                   
                     
                 }, label: {
                     Text("Save for later")
@@ -142,7 +129,25 @@ struct SavePercentageView: View {
             .navigationTitle("Save Pct Calculator")
         }
         
-        
+        //MARK: Functions
+    func AddSavePercentage()
+     {
+         Task {
+             //write to database
+             try await db!.transaction { core in try core.query("INSERT INTO SavePercentage (title, saves, shots, savePercentage) VALUES (?,?,?,?)",
+                                                                
+                                                                Title,
+                                                     
+                                                                saves,
+                                                 
+                                                                shots,
+                                                                savePercentage)
+                 
+                 
+             
+             }
+         }
+    }
     }
     
     struct ContentView_Previews: PreviewProvider {
