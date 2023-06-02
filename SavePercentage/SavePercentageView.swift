@@ -56,7 +56,7 @@ struct SavePercentageView: View {
                         
                         
                         Text("Shots")
-                            .font(.headline.smallCaps())
+                            .font(.system(size: 28))
                         
                         Spacer()
                     }
@@ -65,11 +65,12 @@ struct SavePercentageView: View {
                     Stepper("\(shots.formatted(.number.precision(.fractionLength(0))))",
                             value: $shots,
                             in: 1...400)
+                    .font(.system(size: 28))
                     .padding()
                     
                     HStack {
                         Text("Goals")
-                            .font(.headline.smallCaps())
+                            .font(.system(size: 28))
                         
                         Spacer()
                         
@@ -81,21 +82,23 @@ struct SavePercentageView: View {
                         Stepper("\(goals.formatted(.number.precision(.fractionLength(0))))",
                                 value: $goals,
                                 in: 1...400)
-                        
+                        .font(.system(size: 28))
                         .padding()
                         
                     }
                     
                     HStack {
                         Text("Save Percentage ")
-                            .font(.headline.smallCaps())
+                            .font(.system(size: 28))
                     }
                     .padding()
                     
                     HStack {
                         Text("=")
+                            .font(.system(size: 28))
                         
                         Text("\(savePercentage.formatted(.number.precision(.fractionLength(3))))")
+                            .font(.system(size: 28))
                         
                     }
                     

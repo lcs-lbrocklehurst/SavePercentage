@@ -14,12 +14,12 @@ struct SavePercentageApp: App {
             TabView {
                 SavePercentageView()
                     .tabItem {
-                        Label("Fresh", systemImage: "carrot")
+                        Label("Calculator", systemImage: "Carrot")
                     }
                 
                 SavedView()
                     .tabItem {
-                        Label("Favourites", systemImage: "Face Smilling")
+                        Label("Favourites", systemImage: "list.dash")
                     }
             }
             //Make the database available to all child views through the environment
