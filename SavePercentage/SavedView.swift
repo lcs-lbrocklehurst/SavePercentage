@@ -23,6 +23,7 @@ struct SavedView: View {
         NavigationView() {
             
             List{
+                
                 ForEach(savedGames.results) { currentSavePercentage in
                     VStack(alignment: .leading) {
                         Text(currentSavePercentage.title)
@@ -41,9 +42,7 @@ struct SavedView: View {
                         Text("\(currentSavePercentage.savePercentage)")
                             .font(.system(size: 20))
                         
-                       // Text("Searching on: \(searchText)")
-                        
-                            .searchable(text: $searchText)
+                      
                     }
                     
                     
