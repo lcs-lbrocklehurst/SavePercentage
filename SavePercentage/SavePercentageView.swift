@@ -129,6 +129,7 @@ struct SavePercentageView: View {
                     
                 }, label: {
                     Text("Save for later")
+                        .font(.system(size: 28))
                     
                 })
             //Once saved, disable the button so we can't save the joke twice

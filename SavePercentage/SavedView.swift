@@ -27,14 +27,21 @@ struct SavedView: View {
                     VStack(alignment: .leading) {
                         Text(currentSavePercentage.title)
                             .bold()
+                            .font(.system(size: 23))
                         Text("shots:")
+                            .font(.system(size: 20))
                         Text("\(currentSavePercentage.shots)")
+                            .font(.system(size: 20))
                         Text("Saves:")
+                            .font(.system(size: 20))
                         Text("\(currentSavePercentage.saves)")
+                            .font(.system(size: 20))
                         Text("Save Percentage:")
+                            .font(.system(size: 20))
                         Text("\(currentSavePercentage.savePercentage)")
+                            .font(.system(size: 20))
                         
-                        Text("Searching on: \(searchText)")
+                       // Text("Searching on: \(searchText)")
                         
                             .searchable(text: $searchText)
                     }
