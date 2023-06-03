@@ -29,7 +29,8 @@ struct SavedView: View {
                 
                 Text("Searching on: \(searchText)")
                 
-                List{
+                List(filteredItems, id: \.self) {
+                    currentItem in Text(currentItem){
                     
                     ForEach(savedGames.results) { currentSavePercentage in
                         VStack(alignment: .leading) {
