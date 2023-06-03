@@ -10,6 +10,9 @@ import SwiftUI
 struct SavedView: View {
     
     //MARK: Stored properties
+    //needed to query database
+    @Environment(\.blackbirdDatabase) var db: Blackbird.Database?
+
     
     //the List of saved Games
     @BlackbirdLiveModels({ db in
@@ -56,16 +59,31 @@ struct SavedView: View {
         
     }
     
-    
-}
-//MARK: Functions
-func removeRows(at offsets: IndexSet) {
-    
-    //what item(s) were swiped?
-    for offsets in offsets {
-        print(offsets)
-    }
+    //MARK: Functions
+    func removeRows(at offsets: IndexSet) {
+        
+        Task {
             
+            try await db!.transaction { core in
+                
+                //get the id of the item to be deleted
+                var idlist = ""
+                for offset in offsets {
+                    idlist += "\(savedGames.results[offset].id),"
+            }
+                //remove the final comma
+                print(idlist)
+                idlist.removeLast()
+                print(idlist)
+                //delete the rows from the databse
+                try core.query("DELETE FROM SavePercentage WHERE id IN (?)", idlist)
+        }
+      
+        
+        }
+    }
+    
+    
 }
 
 
