@@ -54,7 +54,9 @@ struct SavedView: View {
                 
             }
            
+            .searchable(text: $searchText)
             .navigationTitle("Saved games")
+            
         }
         
     }
