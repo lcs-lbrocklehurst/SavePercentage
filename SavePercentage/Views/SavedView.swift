@@ -14,11 +14,7 @@ struct SavedView: View {
     @Environment(\.blackbirdDatabase) var db: Blackbird.Database?
 
     
-    //the List of saved Games
-    @BlackbirdLiveModels({ db in
-        try await SavePercentage.read(from: db, sqlWhere: "description LIKE ?", "%\($searchText)")
-        
-    }) var savedGames
+    
     
     //the search term the user has provided
     @State var searchText = ""
@@ -26,34 +22,7 @@ struct SavedView: View {
     var body: some View {
         NavigationView() {
             
-            List{
-                
-                ForEach(savedGames.results) { currentSavePercentage in
-                    VStack(alignment: .leading) {
-                        Text(currentSavePercentage.title)
-                            .bold()
-                            .font(.system(size: 23))
-                        Text("shots:")
-                            .font(.system(size: 20))
-                        Text("\(currentSavePercentage.shots)")
-                            .font(.system(size: 20))
-                        Text("Saves:")
-                            .font(.system(size: 20))
-                        Text("\(currentSavePercentage.saves)")
-                            .font(.system(size: 20))
-                        Text("Save Percentage:")
-                            .font(.system(size: 20))
-                        Text("\(currentSavePercentage.savePercentage)")
-                            .font(.system(size: 20))
-                        
-                      
-                    }
-                    
-                    
-                }
-                .onDelete(perform: removeRows)
-                
-            }
+          
            
             .searchable(text: $searchText)
             .navigationTitle("Saved games")
@@ -62,29 +31,6 @@ struct SavedView: View {
         
     }
     
-    //MARK: Functions
-    func removeRows(at offsets: IndexSet) {
-        
-        Task {
-            
-            try await db!.transaction { core in
-                
-                //get the id of the item to be deleted
-                var idlist = ""
-                for offset in offsets {
-                    idlist += "\(savedGames.results[offset].id),"
-            }
-                //remove the final comma
-                print(idlist)
-                idlist.removeLast()
-                print(idlist)
-                //delete the rows from the databse
-                try core.query("DELETE FROM SavePercentage WHERE id IN (?)", idlist)
-        }
-      
-        
-        }
-    }
     
     
 }
