@@ -16,7 +16,8 @@ struct SavedView: View {
     
     //the List of saved Games
     @BlackbirdLiveModels({ db in
-        try await SavePercentage.read(from: db)
+        try await SavePercentage.read(from: db, sqlWhere: "description LIKE ?", "%\($searchText)")
+        
     }) var savedGames
     
     //the search term the user has provided
